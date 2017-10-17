@@ -1,0 +1,28 @@
+#nav-bar{
+
+    position:fixed;
+    z-index:1;
+    top:0px;
+    padding-right:2em;
+    padding-left:2em;
+    background-color:#00a087;
+    color:#e8fdff;
+    width:100%;
+    height:80px;
+}
+
+#nav-bar .logo{
+  box-sizing: border-box;
+  float: left;
+  width:80px;
+  height:80px;
+}
+
+#nav-bar .header{
+  box-sizing: border-box;
+  float: left;
+  margin-left:10px;
+  font-size: 200%;
+  height:80px;
+  line-height:80px;
+}
