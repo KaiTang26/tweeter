@@ -27,6 +27,10 @@ form{
   float: right;
 }
 
+.red{
+  color:red;
+}
+
 h2{
   box-sizing: border-box;
   margin-right:10px;
