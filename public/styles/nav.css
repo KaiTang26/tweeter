@@ -28,6 +28,8 @@
 }
 
 #nav-bar button{
+  border-radius:6px;
+  border-style: solid;
   box-sizing: border-box;
   float: right;
   height:60px;

@@ -9,6 +9,11 @@
   border-color:#d2d5db;
 
 
+
+}
+
+.new-tweet-hide{
+  display:none;
 }
 
 textarea{
@@ -29,6 +34,10 @@ form{
 
 .red{
   color:red;
+}
+
+.black{
+  color:black;
 }
 
 .new-tweet h2{

@@ -4,55 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// const tweets =[
-// {
-// user: {
-// name: "Johann von Goethe",
-// avatars: {
-// small: "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-// regular: "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-// large: "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-// },
-// handle: "@johann49"
-// },
-// content: {
-// text: "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-// },
-// created_at: 1461113796368
-// },
-
-// {
-// user: {
-// name: "Descartes",
-// avatars: {
-// small: "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-// regular: "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-// large: "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-// },
-// handle: "@rd"
-// },
-// content: {
-// text: "Je pense , donc je suis"
-// },
-// created_at: 1461113959088
-// },
-
-// {
-// user: {
-// name: "Newton",
-// avatars: {
-// small: "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-// regular: "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-// large: "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-// },
-// handle: "@SirIsaac"
-// },
-// content: {
-// text: " <script>alert('uh oh!');</script>  If I have seen further it is by standing on the shoulders of giants"
-// },
-// created_at: 1508320309188
-// }
-// ]
 
 
 $(document).ready(function(){
@@ -64,8 +15,8 @@ $(document).ready(function(){
       const $tweet=createTweetElement(tweet);
 
       $("#tweets").prepend($tweet);
+      console.log("run")
 
-      // $("#tweets").append($tweet);
 
     });
 
@@ -85,7 +36,7 @@ $(document).ready(function(){
 
     const postTime = parseDate(tweetData.created_at);
 
-    console.log(postTime);
+    // console.log(postTime);
 
     let $text = $("<p> </p>").text(tweetData.content.text);
 
@@ -120,7 +71,7 @@ $(document).ready(function(){
     const currentTime = new Date();
     let timeDiff = Math.floor((currentTime - createdTime)/1000);
 
-    console.log(timeDiff);
+    // console.log(timeDiff);
 
     if(timeDiff<60){
 
@@ -173,14 +124,27 @@ $(document).ready(function(){
   if(data.length>145){
 
     data = data.slice(0,140);
-    console.log(data.length);
+    // console.log(data.length);
 
     alert("Toooo much words!\n Only record up to 140 chars");
   }
 
+  if(!data.slice(5)){
+    alert("Please write your tweet!");
+
+  }else{
+
+  $( ".new-tweet" ).toggleClass("new-tweet-hide");
+  $("textarea").val("");
+  $(".counter").text("140");
+
   //[post]
   $.post("http://localhost:8080/tweets",data, loadTweets)
    .done(console.log("post success"));
+  }
+
+
+
   });
 
 
@@ -202,8 +166,10 @@ $(document).ready(function(){
   }
 
   $( "#nav-bar button" ).click(function() {
-    console.log("haha")
-  $( ".new-tweet" ).animate({ "#nav-bar button": "+=500px" }, "slow" );
+  $( ".new-tweet" ).toggleClass("new-tweet-hide");
+  $("textarea").select();
+  window.scrollTo( 0, 0 );
+  // loadTweets();
 });
 
   loadTweets();

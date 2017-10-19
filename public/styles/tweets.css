@@ -104,6 +104,7 @@
 
 .oldTweet p{
   overflow: auto;
+  word-wrap: break-word;
   box-sizing: border-box;
   margin-left:10px;
   margin-top:0px;

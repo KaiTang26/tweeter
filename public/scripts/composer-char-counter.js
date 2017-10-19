@@ -8,6 +8,18 @@ $( document ).ready(function() {
 
     counterColor.toggleClass("red", numberOfSpace<0);
 
+
+  // $(".new-tweet input").click(function(){
+
+  //   $( ".new-tweet" ).toggleClass("new-tweet-hide");
+  //   $("textarea").val("");
+  //   $(".counter").val("140");
+
+  // })
+
   });
     console.log( "ready!" );
 });
+
+
+
