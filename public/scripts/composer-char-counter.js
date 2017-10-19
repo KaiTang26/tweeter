@@ -1,14 +1,12 @@
 $( document ).ready(function() {
-  let count=140;
+  const count=140;
 
-  $("textarea").keyup(function(){
-    let numberOfSpace=count-Number(this.value.length);
+  $(".new-tweet textarea").keyup(function(){
+    const numberOfSpace=count-Number(this.value.length);
 
-    if(numberOfSpace<0){
-      $(this).siblings(".counter").text(numberOfSpace).addClass("red");
-    }else{
-      $(this).siblings(".counter").text(numberOfSpace).removeClass("red");
-    }
+    const counterColor =$(this).siblings(".counter").text(numberOfSpace);
+
+    counterColor.toggleClass("red", numberOfSpace<0);
 
   });
     console.log( "ready!" );

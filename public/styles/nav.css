@@ -26,3 +26,33 @@
   height:80px;
   line-height:80px;
 }
+
+#nav-bar button{
+  box-sizing: border-box;
+  float: right;
+  height:60px;
+  width:110px;
+  margin-top:10px;
+  background-color:#D9FBF7;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  color:#2CBEAA;
+  padding: 0px 0px 0px 0px;
+  font-size: 110%;
+}
+
+  #nav-bar button:hover{
+
+    color:black;
+    background-color:#FFFFFF;
+    padding: 0px 0px 0px 0px;
+
+
+
+
+}
+
+
+
+

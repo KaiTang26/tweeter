@@ -16,6 +16,11 @@
     <!-- App navigation bar CSS -->
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -24,7 +29,9 @@
 
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <script src="https://use.fontawesome.com/32cef9c51c.js"></script>
+
+
   </head>
 
   <body>
@@ -33,6 +40,12 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <button type="button">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+        Compose
+      </button>
+
     </nav>
 
     <!-- Page-specific (main) content here -->
@@ -48,11 +61,35 @@
         </form>
       </section>
 
-      <p>sdfkjsdfds</p>
-      <p>sdfkjsdfds</p>
-      <p>sdfkjsdfds</p>
-      <p>sdfkjsdfds</p>
-      <p>sdfkjsdfds</p>
+      <section id="tweets">
+
+        <!-- <article class="oldTweet">
+          <header>
+            <img src="https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png">
+            <span class="tweeterName">Kai Tang</span>
+            <span class="tweeterId">@kai</span>
+          </header>
+            <article>
+              <p>fsdfa</p>
+            </article>
+          <footer>
+            <span class="postTime">10 days ago</span>
+            <div class="icon">
+
+              <i class="fa fa-flag" aria-hidden="true"></i>
+              <i class="fa fa-retweet" aria-hidden="true"></i>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+
+            </div>
+
+          </footer>
+        </article> -->
+
+      </section>
+
+
+
+
 
 
     </main>

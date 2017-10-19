@@ -31,7 +31,7 @@ form{
   color:red;
 }
 
-h2{
+.new-tweet h2{
   box-sizing: border-box;
   margin-right:10px;
   margin-left:10px;
