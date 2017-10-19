@@ -10,13 +10,14 @@ $(document).ready(function(){
 
   function renderTweets(tweets){
 
+    $( "#tweets" ).empty();
+
     tweets.forEach((tweet)=>{
 
       const $tweet=createTweetElement(tweet);
 
       $("#tweets").prepend($tweet);
       console.log("run")
-
 
     });
 
@@ -115,37 +116,84 @@ $(document).ready(function(){
     }
   }
 
+  let inputText="";
+  $(".new-tweet textarea").keyup(function(){
+    inputText = this.value;
+  })
 
   $( ".new-tweet form" ).on( "submit", function( event ) {
-  event.preventDefault();
+      event.preventDefault();
 
-  let data = $( this ).serialize();
+      if(inputText.length>140){
 
-  if(data.length>145){
+        alert("Toooo much words!\n Only record up to 140 chars");
 
-    data = data.slice(0,140);
-    // console.log(data.length);
+      }else if(!(/\w+/.test(inputText))){
 
-    alert("Toooo much words!\n Only record up to 140 chars");
-  }
-
-  if(!data.slice(5)){
-    alert("Please write your tweet!");
-
-  }else{
-
-  $( ".new-tweet" ).toggleClass("new-tweet-hide");
-  $("textarea").val("");
-  $(".counter").text("140");
-
-  //[post]
-  $.post("http://localhost:8080/tweets",data, loadTweets)
-   .done(console.log("post success"));
-  }
+        alert("Please write your tweet!");
 
 
+      }else{
 
-  });
+        const data = `text=${encodeURIComponent(inputText)}`;
+
+        $( ".new-tweet" ).toggleClass("new-tweet-hide");
+        $("textarea").val("");
+        $(".counter").text("140");
+
+        $.post("http://localhost:8080/tweets",data, loadTweets)
+         .done(console.log("post success"));
+         inputText="";
+      }
+
+    });
+
+
+
+
+
+
+
+  // $( ".new-tweet form" ).on( "submit", function( event ) {
+  // event.preventDefault();
+
+  // let data = $( this ).serialize();
+
+  // let dcData = decodeURIComponent(data);
+
+  //  console.log("decode: ", dcData);
+  //  console.log(dcData.length);
+
+  // // console.log("this data", data);
+
+  // if(dcData.length>145){
+
+  //   // data = data.slice(0,140);
+  //   console.log(dcData.length);
+
+  //   alert("Toooo much words!\n Only record up to 140 chars");
+
+  // } else if(!(/\w+/.test(dcData.slice(5)))){
+
+  //   // console.log(data.slice(5));
+  //   alert("Please write your tweet!");
+
+  // }else{
+
+  //   console.log("real:",data.slice(5));
+
+  // $( ".new-tweet" ).toggleClass("new-tweet-hide");
+  // $("textarea").val("");
+  // $(".counter").text("140");
+
+  // //[post]
+  // $.post("http://localhost:8080/tweets",data, loadTweets)
+  //  .done(console.log("post success"));
+  // }
+
+
+
+  // });
 
 
 
@@ -169,7 +217,7 @@ $(document).ready(function(){
   $( ".new-tweet" ).toggleClass("new-tweet-hide");
   $("textarea").select();
   window.scrollTo( 0, 0 );
-  // loadTweets();
+  loadTweets();
 });
 
   loadTweets();
