@@ -141,8 +141,8 @@ $(document).ready(function(){
         $("textarea").val("");
         $(".counter").text("140");
 
-        $.post("http://localhost:8080/tweets",data, loadTweets)
-         .done(console.log("post success"));
+        $.post("http://localhost:8080/tweets",data)
+         .done(loadTweets);
          inputText="";
       }
 
