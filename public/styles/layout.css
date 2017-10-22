@@ -16,7 +16,7 @@ html {
  * Global layout stuff
  */
 
-body {
+html body {
   margin: 0;
   color: #244751;
   background-color: #eee;
@@ -28,13 +28,44 @@ body {
  */
 body .container{
   box-sizing: border-box;
-  width:450px;
+  width:100%;
   margin:auto;
+  /*background-color:white;*/
+  /*position: relative;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  height: 100%;*/
+
+ }
+
+ body .row{
+  box-sizing: border-box;
   background-color:white;
+  /*position: relative;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  height: 100%;*/
+
+ }
+
+ body .outer{
+  box-sizing: border-box;
+  background-color:#eee;
+  /*position: relative;*/
+  /*padding-top: 100px;*/
+  /*padding-bottom: 100px;*/
+  /*height: 100%;*/
+
+ }
+
+body .main{
+  box-sizing: border-box;
+
   position: relative;
   padding-top: 100px;
   padding-bottom: 100px;
   height: 100%;
 
 
- }
+}
+
