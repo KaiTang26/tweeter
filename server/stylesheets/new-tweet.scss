@@ -1,0 +1,47 @@
+.new-tweet{
+  box-sizing: border-box;
+  background-color: #ECE8E8;
+  border-radius:6px;
+  border-style: solid;
+  border-width: 1px;
+  border-color:#d2d5db;
+
+}
+
+.new-tweet-hide{
+  display:none;
+}
+
+textarea{
+  width:100%;
+
+}
+
+form{
+  box-sizing: border-box;
+  margin-right:10px;
+  margin-left:10px;
+  margin-bottom:10px;
+}
+
+.counter{
+  float: right;
+}
+
+.red{
+  color:red;
+}
+
+.black{
+  color:black;
+}
+
+.new-tweet h2{
+  box-sizing: border-box;
+  margin-right:10px;
+  margin-left:10px;
+  border-bottom:1px solid black;
+  margin-top: 10px;
+  margin-bottom: 25px;
+
+}

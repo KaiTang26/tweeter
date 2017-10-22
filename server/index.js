@@ -5,10 +5,22 @@
 const PORT          = 8080;
 const express       = require("express");
 const bodyParser    = require("body-parser");
+const sassMiddleware = require('node-sass-middleware');
 const app           = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+
+app.use(sassMiddleware({
+  src: './server/stylesheets', // Location of SASS files
+  dest: './public/styles',
+  debug: true,                // Compiled CSS location
+  prefix: '/styles'       // URL path to be intercepted by the middleware and
+}));                     // compiled on the fly. When the browser tries to
+
+
+app.use(express.static("./public"));
+
+
 
 const loadDb = require('./lib/mongo-db.js');
 
