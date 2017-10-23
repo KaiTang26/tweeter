@@ -8,6 +8,7 @@
 
 $(document).ready(function(){
 
+//ajax to upload new tweets
   function renderTweets(tweets){
 
     $( "#tweets" ).empty();
@@ -23,7 +24,7 @@ $(document).ready(function(){
 
   }
 
-
+// construct html by jquery
   function createTweetElement(tweetData){
 
     let $tweet = $("<article> </article>").addClass("oldTweet");
@@ -60,13 +61,11 @@ $(document).ready(function(){
 
     $tweet.append($header).append($article).append($footer);
 
-
-
     return $tweet;
 
   }
 
-
+// function for parse time
   function parseDate(createdTime){
 
     const currentTime = new Date();
@@ -116,6 +115,7 @@ $(document).ready(function(){
     }
   }
 
+//function for post tweets to database
   let inputText="";
   $(".new-tweet textarea").keyup(function(){
     inputText = this.value;
@@ -132,7 +132,6 @@ $(document).ready(function(){
 
         alert("Please write your tweet!");
 
-
       }else{
 
         const data = `text=${encodeURIComponent(inputText)}`;
@@ -148,59 +147,10 @@ $(document).ready(function(){
 
     });
 
-
-
-
-
-
-
-  // $( ".new-tweet form" ).on( "submit", function( event ) {
-  // event.preventDefault();
-
-  // let data = $( this ).serialize();
-
-  // let dcData = decodeURIComponent(data);
-
-  //  console.log("decode: ", dcData);
-  //  console.log(dcData.length);
-
-  // // console.log("this data", data);
-
-  // if(dcData.length>145){
-
-  //   // data = data.slice(0,140);
-  //   console.log(dcData.length);
-
-  //   alert("Toooo much words!\n Only record up to 140 chars");
-
-  // } else if(!(/\w+/.test(dcData.slice(5)))){
-
-  //   // console.log(data.slice(5));
-  //   alert("Please write your tweet!");
-
-  // }else{
-
-  //   console.log("real:",data.slice(5));
-
-  // $( ".new-tweet" ).toggleClass("new-tweet-hide");
-  // $("textarea").val("");
-  // $(".counter").text("140");
-
-  // //[post]
-  // $.post("http://localhost:8080/tweets",data, loadTweets)
-  //  .done(console.log("post success"));
-  // }
-
-
-
-  // });
-
-
-
+  // function for load all tweets
   function loadTweets(){
 
   $.get("http://localhost:8080/tweets", (data)=>{
-
 
     renderTweets(data);
   })
@@ -213,6 +163,7 @@ $(document).ready(function(){
 
   }
 
+  // function for compose button to hide new tweets and scroll to top of window
   $( "#nav-bar button" ).click(function() {
   $( ".new-tweet" ).toggleClass("new-tweet-hide");
   $("textarea").select();
