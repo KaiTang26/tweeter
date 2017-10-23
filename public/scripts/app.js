@@ -150,53 +150,6 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-  // $( ".new-tweet form" ).on( "submit", function( event ) {
-  // event.preventDefault();
-
-  // let data = $( this ).serialize();
-
-  // let dcData = decodeURIComponent(data);
-
-  //  console.log("decode: ", dcData);
-  //  console.log(dcData.length);
-
-  // // console.log("this data", data);
-
-  // if(dcData.length>145){
-
-  //   // data = data.slice(0,140);
-  //   console.log(dcData.length);
-
-  //   alert("Toooo much words!\n Only record up to 140 chars");
-
-  // } else if(!(/\w+/.test(dcData.slice(5)))){
-
-  //   // console.log(data.slice(5));
-  //   alert("Please write your tweet!");
-
-  // }else{
-
-  //   console.log("real:",data.slice(5));
-
-  // $( ".new-tweet" ).toggleClass("new-tweet-hide");
-  // $("textarea").val("");
-  // $(".counter").text("140");
-
-  // //[post]
-  // $.post("http://localhost:8080/tweets",data, loadTweets)
-  //  .done(console.log("post success"));
-  // }
-
-
-
-  // });
-
-
-
   function loadTweets(){
 
   $.get("http://localhost:8080/tweets", (data)=>{
@@ -213,12 +166,44 @@ $(document).ready(function(){
 
   }
 
-  $( "#nav-bar button" ).click(function() {
+  $( "#nav-bar #button" ).click(function() {
   $( ".new-tweet" ).toggleClass("new-tweet-hide");
   $("textarea").select();
   window.scrollTo( 0, 0 );
   loadTweets();
 });
+
+
+
+  $("#nav-bar #register" ).click(function() {
+    $( "#regForm" ).toggleClass("register-none");
+
+  });
+
+  $("#regForm  form").submit(function(event){
+      event.preventDefault();
+      const regData = $( this ).serialize()
+    $( "#regForm" ).toggleClass("register-none");
+    $("#regForm .text").val("");
+    $.post("http://localhost:8080/register",regData)
+     .done(loadTweets);
+  });
+
+
+   $("#nav-bar #log" ).click(function() {
+    $( "#logForm" ).toggleClass("register-none");
+  });
+
+
+
+
+
+
+
+
+
+
+
 
   loadTweets();
 

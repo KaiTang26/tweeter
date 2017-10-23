@@ -24,17 +24,27 @@ app.use(express.static("./public"));
 
 const loadDb = require('./lib/mongo-db.js');
 
+const loadDbUse = require('./lib/mongo-db-users.js');
+
 loadDb(function(db) {
 
-  const DataHelpers = require("./lib/data-helpers.js")(db);
+  loadDbUse(function(userDb){
 
-  const tweetsRoutes = require("./routes/tweets")(DataHelpers);
+    const DataHelpers = require("./lib/data-helpers.js")(db);
 
-  app.use("/tweets", tweetsRoutes);
+    const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 
-  app.listen(PORT, () => {
-  console.log("Example app listening on port " + PORT);
-  });
+    const usersRoutes = require("./routes/users")(userDb);
+
+    app.use("/tweets", tweetsRoutes);
+
+    app.use("/users", usersRoutes);
+
+    app.listen(PORT, () => {
+    console.log("Example app listening on port " + PORT);
+    });
+
+  })
 
 });
 

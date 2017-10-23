@@ -21,6 +21,8 @@
 
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
+    <link rel="stylesheet" href="/styles/register.css" type="text/css" />
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
 
@@ -48,11 +50,21 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
-      <button type="button">
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 
-        Compose
-      </button>
+      <div class="button">
+        <button  id="register" type="button">
+          Register
+        </button>
+        <button  id="log" type="button">
+          Login/Logout
+        </button>
+        <button id="button" type="button">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          Compose
+        </button>
+      </div>
+
+
 
     </nav>
 
@@ -62,6 +74,35 @@
         <div class="col-lg-2 col-md-1 col-0 outer"></div>
         <div class="col-lg-1 col-md-1 col-0"></div>
           <div class="col-lg-6 col-md-8 col-12 main">
+
+            <section class="register-none register" id="regForm">
+              <h2>Registration</h2>
+              <form action="http://localhost:8080/users" method="post">
+                <div class="leftside">
+                  <input class="text" type="text" name="firstName" placeholder="First Name"><br>
+                  <input class="text" type="text" name="LastName" placeholder="Last Name">
+                </div>
+
+                <div class="rightside">
+                  <input class="text" type="password" name="password" placeholder="Password"><br>
+                  <input type="submit" value="Register">
+                </div>
+              </form>
+            </section>
+
+            <section class="register-none register" id="logForm">
+              <h2>Login/Logout</h2>
+              <form action="http://localhost:8080/users" method="post">
+                <div class="leftside">
+                  <input type="text" name="firstName" placeholder="First Name"><br>
+                  <input type="text" name="LastName" placeholder="Last Name">
+                </div>
+                <div class="rightside">
+                  <input type="password" name="password" placeholder="Password"><br>
+                  <input type="submit" value="I/O">
+                </div>
+              </form>
+            </section>
 
 
 

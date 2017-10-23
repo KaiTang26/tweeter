@@ -7,34 +7,37 @@
   background-color: #00a087;
   color: #e8fdff;
   width: 100%;
-  height: 80px; }
+  height: 90px; }
   #nav-bar .logo {
     box-sizing: border-box;
     float: left;
     width: 80px;
-    height: 80px; }
+    height: 90px; }
   #nav-bar .header {
     box-sizing: border-box;
     float: left;
     margin-left: 10px;
     font-size: 200%;
-    height: 80px;
+    height: 90px;
     line-height: 80px; }
-  #nav-bar button {
-    border-radius: 6px;
-    border-style: solid;
+  #nav-bar .button {
     box-sizing: border-box;
     float: right;
-    height: 60px;
-    width: 110px;
-    margin-top: 10px;
-    background-color: #D9FBF7;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    color: #2CBEAA;
-    padding: 0px 0px 0px 0px;
-    font-size: 110%; }
-    #nav-bar button:hover {
-      color: black;
-      background-color: #FFFFFF; }
+    height: 90px;
+    width: 110px; }
+    #nav-bar .button button {
+      border-radius: 6px;
+      border-style: solid;
+      box-sizing: border-box;
+      height: 30px;
+      width: 110px;
+      background-color: #D9FBF7;
+      border-style: solid;
+      border-width: 1px;
+      border-color: black;
+      color: #2CBEAA;
+      padding: 0px 0px 0px 0px;
+      font-size: 110%; }
+      #nav-bar .button button:hover {
+        color: black;
+        background-color: #FFFFFF; }
