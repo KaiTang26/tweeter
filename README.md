@@ -14,7 +14,7 @@ This project involved knowledge about HTML, CSS, JS, jQuery and AJAX front-end s
 
 ## Screenshot
 
-!["Screenshot for Tweeter App web page"]()
+!["Screenshot for Tweeter App web page"](https://github.com/KaiTang26/tweeter/blob/master/docs/Tweeter%20App%20Page.png)
 
 ## Dependencies
 
